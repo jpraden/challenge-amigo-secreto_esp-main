@@ -1,0 +1,168 @@
+/* Jaime Pradenas Pizarro : Challenge Amigo Secreto*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root{
+      --fondo:#FFF9EB; /* crema */
+      --texto:#4B69FD; /* azul */
+      --texto-suave:#3446b6; /* azul más oscuro para subtítulos */
+      --card:#ffffff;
+      --borde:rgba(75,105,253,0.25);
+      --sombra:0 6px 24px rgba(75,105,253,0.12);
+      --ok:#2e7d32; --warn:#b76e00; --err:#b71c1c;
+      --accent-1:#ffcc80; --accent-2:#c5cae9; --accent-3:#b3e5fc;
+    }
+
+html,body{
+    height:100%
+}
+
+body {
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
+    line-height:1.6;
+    background:var(--fondo);color:var(--texto)
+}
+
+
+.wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:24px;
+    position:relative;
+    z-index:1
+}
+
+
+header.hero{
+    position:relative;
+    border-radius:16px;
+    background:linear-gradient(180deg, rgba(75,105,253,.06), rgba(75,105,253,.02));
+    padding:28px 24px;
+    box-shadow:var(--sombra);overflow:hidden;
+}
+
+header.hero h1{
+    margin:0 0 8px;
+    font-size:clamp(1.6rem,3vw,2.4rem);
+}
+
+header.hero p.sub{
+    margin:0;color:var(--texto-suave);
+}
+
+a.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;margin-top:16px;
+    text-decoration:none;
+    color:var(--texto);
+    background:#ffffffcc;
+    border:1px solid var(--borde);
+    padding:8px 12px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(75,105,253,.08);
+    font-weight:600;
+    transition:transform .08s ease, box-shadow .2s ease;
+}
+
+a.btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 6px 18px rgba(75,105,253,.12);
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--borde);
+    border-radius:14px;
+    padding:18px;
+    box-shadow:var(--sombra);
+    margin:18px 0;
+}
+
+h2{
+    font-size:clamp(1.2rem,2.2vw,1.6rem);
+    margin:0 0 8px;
+}
+
+h3{font-size:1.05rem;
+    margin:14px 0 6px;
+}
+
+ul,ol{
+    padding-left:1.2rem;
+}
+
+li+li{
+    margin-top:6px;
+}
+
+code,kbd,pre{
+    font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace
+}
+
+pre{
+    background:#ffffff; 
+    border:1px solid var(--borde); 
+    padding:12px;
+    border-radius:10px;
+    overflow:auto
+}
+
+.badge{display:inline-block;
+    font-size:.85rem;
+    border-radius:999px;
+    padding:2px 8px;
+    border:1px solid var(--borde);
+    background:#fff;
+    color:var(--texto);
+}
+
+.nota{
+    background:linear-gradient(180deg, rgba(255,204,128,.25), rgba(255,249,235,.5));
+    border-left:4px solid var(--texto);
+    padding:12px;border-radius:10px;
+}
+
+
+footer{
+    margin:32px 0 20px;text-align:center;
+    color:var(--texto-suave);font-size:.95rem;
+}
+
+.bg-ornaments{
+    position:fixed;
+    inset:-10vh -10vw auto auto;
+    width:120vw;height:120vh;
+    z-index:0;pointer-events:none;
+    opacity:.45;background:
+      radial-gradient(120px 120px at 10% 20%, var(--accent-1), transparent 60%),
+      radial-gradient(160px 160px at 85% 15%, var(--accent-2), transparent 60%),
+      radial-gradient(180px 180px at 80% 80%, var(--accent-3), transparent 60%),
+      radial-gradient(220px 220px at 20% 85%, rgba(75,105,253,.18), transparent 60%);
+    filter:blur(20px) saturate(1.05);
+}
+
+
+
+@media (prefers-contrast: more){
+    .bg-ornaments{
+        opacity:.25;
+        filter:none;
+    }
+    .card{
+        box-shadow:none;
+    }
+ }
+
+ @media print{
+    .bg-ornaments,
+    a.btn{
+        display:none !important;
+    }
+    .card{
+        box-shadow:none;
+    }
+    body{
+        background:white;
+    }
+    }

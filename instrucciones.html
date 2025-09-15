@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style_instrucciones.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <title>Instrucciones | Challenger Amigo Secreto</title>
+  <meta name="description" content="Instrucciones simples para usar Challenger Amigo Secreto: agregar nombres, validar, sortear y volver a jugar." />
+  
+</head>
+<body>
+  <div class="bg-ornaments" aria-hidden="true"></div>
+  <a id="top"></a>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Instrucciones — Challenger Amigo Secreto</h1>
+      <p class="sub">Guía para usar la aplicación: Cómo ingresar nombres, validar, sortear y volver a jugar.</p>
+      <a class="btn" href="index.html" aria-label="Volver a la página principal">⬅ Volver a la página principal</a>
+    </header>
+
+    <section class="card" aria-labelledby="descripcion">
+      <h2 id="descripcion">Descripción</h2>
+      <p>Esta aplicación permite ingresar nombres de amigos en una lista para realizar un sorteo aleatorio y determinar quién es el <strong>amigo secreto</strong>. Los nombres se añaden mediante un campo de texto y el botón <em>“Adicionar”</em>; al finalizar, el botón <em>“Sortear Amigo”</em> elige un nombre al azar y lo muestra en pantalla.</p>
+      <p class="nota"><span class="badge">Tip</span> Verás la lista de nombres debajo del campo de entrada para revisar lo que llevas agregado.</p>
+    </section>
+
+    <section class="card" aria-labelledby="vistas">
+      <h2 id="vistas">Vistas del front</h2>
+      <ul>
+        <li><strong>Página de entrada</strong>: imagen representativa y título “Challenge – Amigo Secreto”.</li>
+		<img src="assets/frontEntrada.PNG"><br></br>
+        <li><strong>Página de ingreso</strong>: campo para registrar amigos, imagen, título y <em>lista de registros válidos</em>.</li>
+		<img src="assets/frontIngreso.PNG"><br></br>
+        <li><strong>Página de resultado</strong>: tras presionar “Sortear Amigo”, muestra el amigo asignado de forma aleatoria, con imagen y título.</li>
+		<img src="assets/frontResultado.PNG"><br></br>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="funcionalidades">
+      <h2 id="funcionalidades">Funcionalidades</h2>
+      <ul>
+        <li><strong>Agregar nombres</strong> con el botón <em>“Adicionar”</em>.</li>
+        <li><strong>Validar entrada</strong>: si está vacío o no cumple reglas, se muestra una alerta.</li>
+        <li><strong>Visualizar la lista</strong> de nombres ingresados.</li>
+        <li><strong>Sorteo aleatorio</strong> del amigo secreto y visualización del resultado.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="reglas">
+      <h2 id="reglas">Reglas y consideraciones</h2>
+      <ul>
+        <li><strong>Nombre no válido</strong>: no puede estar vacío, ni contener números o caracteres especiales.</li>
+        <li><strong>Nombre válido</strong>: sólo letras (mayúsculas/minúsculas); se permiten nombres con tilde.</li>
+        <li><strong>Mínimo</strong>: registra al menos <strong>3 amigos</strong> para que tenga sentido el sorteo.</li>
+        <li><strong>Máximo</strong>: no existe límite de registros.</li>
+        <li>Al presionar <em>“Sortear Amigo”</em> con registros válidos, se muestra el amigo asignado de forma aleatoria.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="alertas">
+      <h2 id="alertas">Alertas y mensajes</h2>
+
+      <h3>Nombre inválido</h3>
+      <pre><code class="language-js">function mostrarAlertaNombreInvalido() {
+  alert("Por favor, ingrese un nombre válido.\n\n*** Se permite sólo texto y vocales con tilde...***")};
+ </code></pre>
+      <p><strong>Cuándo aparece</strong>:</p>
+      <ul>
+        <li>Al hacer clic en <em>“Adicionar”</em> sin ingresar nombre.</li>
+        <li>Al hacer clic en <em>“Sortear Amigo”</em> sin haber ingresado ningún nombre.</li>
+        <li>Al ingresar números o caracteres especiales no permitidos.</li>
+		<img src="assets/frontNombreNoValido.PNG"><br></br>
+      </ul>
+
+      <h3>Nombre duplicado</h3>
+      <pre><code class="language-js">function mostrarAlertaExisteEnLista() {
+  alert("NOMBRE YA EXISTE en la lista...\n\n*** Ingrese otro nombre ***")};
+  <img src="assets/frontNombreExiste.PNG"><br></br>
+</code></pre>
+
+      <h3>Menos de 3 participantes</h3>
+      <p>Si has registrado menos de tres nombres, se despliega un mensaje en pantalla invitando a completar el registro antes del sorteo.</p>
+	  <img src="assets/frontFaltanNombres.PNG"><br></br>
+    </section>
+
+    <section class="card" aria-labelledby="nuevo-juego">
+      <h2 id="nuevo-juego">Nuevo juego</h2>
+      <p>Para un nuevo juego, ingresa nombres de un nuevo grupo de amigos. Las variables y listas se inicializarán nuevamente para realizar otro sorteo.</p>
+	  <img src="assets/frontNuevo.PNG"><br></br>
+    </section>
+
+    <footer>
+      <p>
+        <a class="btn" href="#top">⬆ Ir arriba</a>
+        &nbsp; • &nbsp;
+        <a class="btn" href="index.html">⬅ Volver a la página principal</a>
+      </p>
+      <p>© Challenger Amigo Secreto — Instrucciones || Jaime Pradenas Pizarro </p>
+    </footer>
+  </div>
+</body>
+</html>
