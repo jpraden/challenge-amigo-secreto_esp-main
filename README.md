@@ -52,7 +52,7 @@ ________________________________________________________________________________
 
 - HTML5      -> Estructura semántica del contenido.<br>
 - CSS3       -> Estilos responsivos y diseño visual.<br>
-- JavaScript -> lógica del sorteo y manejo dinámico del DOM
+- JavaScript -> lógica del sorteo y manejo dinámico del DOM<br>
 - Git        -> control de versiones y colaboración
 
 ________________________________________________________________________________________________________________________
